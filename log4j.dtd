@@ -1,0 +1,19 @@
+<!ELEMENT Configuration (Appenders,Loggers)>
+<!ATTLIST Configuration status NMTOKEN #REQUIRED>
+<!ELEMENT Appenders (param+,layout)>
+<!ATTLIST Appenders name NMTOKEN #REQUIRED>
+<!ATTLIST Appenders class NMTOKEN #REQUIRED>
+<!ELEMENT param EMPTY>
+<!ATTLIST param name NMTOKEN #REQUIRED>
+<!ATTLIST param value CDATA #REQUIRED>
+<!ELEMENT layout (Param)>
+<!ATTLIST layout class NMTOKEN #REQUIRED>
+<!ELEMENT Param EMPTY>
+<!ATTLIST Param name NMTOKEN #REQUIRED>
+<!ATTLIST Param value CDATA #REQUIRED>
+<!ELEMENT Loggers (Root)>
+<!ELEMENT Root (AppenderRef)>
+<!ATTLIST Root level NMTOKEN #REQUIRED>
+<!ATTLIST Root additivity NMTOKEN #REQUIRED>
+<!ELEMENT AppenderRef EMPTY>
+<!ATTLIST AppenderRef ref NMTOKEN #REQUIRED>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Extra logging related to initialization of Log4j. 
+ Set to debug or trace if log4j initialization is failing. -->
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns="https://jakarta.apache.org/log4j/">
+    <appender name="FILE" class="org.apache.log4j.FileAppender">
+    
+    <param name="Threshold" value="INFO"/>
+    <param name="append" value="false"/>
+    <param name="File" value="${LogFilePath}"/>
+    	<!-- Console appender configuration -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <Param name="ConversionPattern" value="%d % -5p [%c{1}] %m %n" />
+        </layout>
+    </appender>
+    	<!-- Root logger referring to console appender -->
+        <root>
+            <level value="INFO"/>
+            <appender-ref ref="FILE" />
+        </root>
+</log4j:configuration>
